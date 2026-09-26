@@ -17,4 +17,12 @@ public class Sinistro {
     private String usuarioRegistro;
     private BigDecimal valorSinistro;
     private TipoSinistro tipo;
+
+    public String getNumero(){
+        return numero;
+    }
+
+    public void setNumero(String numero){
+        this.numero = numero;
+    }
 }
