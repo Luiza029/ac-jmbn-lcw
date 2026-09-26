@@ -1,14 +1,15 @@
 package br.edu.cs.poo.ac.seguro.entidades;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class SeguradoPessoa extends Segurado{
+public class SeguradoPessoa extends Segurado implements Serializable {
     private String cpf;
     private double renda;
 
-    public SeguradoPessoa(BigDecimal bonus, LocalDate dataNascimento, Endereco endereco, String nome, String cpf, double renda) {
-        super(bonus, dataNascimento, endereco, nome);
+    public SeguradoPessoa(String nome, Endereco endereco, LocalDate dataNascimento, BigDecimal bonus, String cpf, double renda) {
+        super(nome, endereco, dataNascimento, bonus);
         this.cpf = cpf;
         this.renda = renda;
     }

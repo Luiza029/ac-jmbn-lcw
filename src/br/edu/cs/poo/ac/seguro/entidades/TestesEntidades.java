@@ -6,10 +6,6 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import br.edu.cs.poo.ac.seguro.entidades.SeguradoEmpresa;
-import br.edu.cs.poo.ac.seguro.entidades.SeguradoPessoa;
-import br.edu.cs.poo.ac.seguro.entidades.TipoSinistro;
-
 public class TestesEntidades {
 
     @Test
@@ -32,14 +28,14 @@ public class TestesEntidades {
     }
     @Test
     public void teste03() {
-        SeguradoEmpresa seg = new SeguradoEmpresa("JOCA", null, null, BigDecimal.ZERO, null, 0.0, false);
+        SeguradoEmpresa seg = new SeguradoEmpresa("joca", null, null, BigDecimal.ZERO, null, 0.0, false);
         seg.creditarBonus(new BigDecimal("100.00"));
         seg.creditarBonus(new BigDecimal("50.00"));
         Assertions.assertEquals(seg.getBonus(), new BigDecimal("150.00"));
     }
     @Test
     public void teste04() {
-        SeguradoPessoa seg = new SeguradoPessoa("MARIA", null, null, new BigDecimal("200.00"), null, 0.0);
+        SeguradoPessoa seg = new SeguradoPessoa("MARIA", null, null, new BigDecimal("200.00"), null,0.0);
         seg.debitarBonus(new BigDecimal("40.00"));
         seg.debitarBonus(new BigDecimal("20.00"));
         Assertions.assertEquals(seg.getBonus(), new BigDecimal("140.00"));

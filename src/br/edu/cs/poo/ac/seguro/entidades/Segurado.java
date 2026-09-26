@@ -9,12 +9,14 @@ public class Segurado {
     private LocalDate dataCriacao;
     private BigDecimal bonus;
 
-    public Segurado(BigDecimal bonus, LocalDate dataCriacao, Endereco endereco, String nome) {
-        this.bonus = bonus;
-        this.dataCriacao = dataCriacao;
-        this.endereco = endereco;
+    public Segurado(String nome, Endereco endereco, LocalDate dataCriacao, BigDecimal bonus) {
         this.nome = nome;
+        this.endereco = endereco;
+        this.dataCriacao = dataCriacao;
+        this.bonus = bonus;
     }
+
+    public Segurado() { }
 
     public String getNome() {
         return nome;
