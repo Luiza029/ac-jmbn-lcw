@@ -1,10 +1,9 @@
 package br.edu.cs.poo.ac.seguro.entidades;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class SeguradoPessoa extends Segurado implements Serializable {
+public class SeguradoPessoa extends Segurado {
     private String cpf;
     private double renda;
 
@@ -36,5 +35,15 @@ public class SeguradoPessoa extends Segurado implements Serializable {
 
     public void setDataNascimento(LocalDate dataNascimento){
         super.setDataCriacao(dataNascimento);
+    }
+
+    @Override
+    public String getIdUnico() {
+        return cpf;
+    }
+
+    @Override
+    public boolean isEmpresa() {
+        return false;
     }
 }
