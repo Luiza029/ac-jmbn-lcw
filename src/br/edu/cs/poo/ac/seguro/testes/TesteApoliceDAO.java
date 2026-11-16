@@ -13,35 +13,35 @@ public class TesteApoliceDAO extends TesteDAO {
     @Test
     public void teste01() {
         String numero = "00000000";
-        cadastro.incluir(new Apolice(null, null, null, null ,numero), numero);
+        cadastro.incluir(new Apolice(numero, null, null, null, null, null), numero);
         Apolice ve = dao.buscar(numero);
         Assertions.assertNotNull(ve);
     }
     @Test
     public void teste02() {
         String numero = "10000000";
-        cadastro.incluir(new Apolice(null, null, null, null ,numero), numero);
+        cadastro.incluir(new Apolice(numero, null, null, null, null, null), numero);
         Apolice ve = dao.buscar("11000000");
         Assertions.assertNull(ve);
     }
     @Test
     public void teste03() {
         String numero = "20000000";
-        cadastro.incluir(new Apolice(null, null, null, null ,numero), numero);
+        cadastro.incluir(new Apolice(numero, null, null, null, null, null), numero);
         boolean ret = dao.excluir(numero);
         Assertions.assertTrue(ret);
     }
     @Test
     public void teste04() {
         String numero = "30000000";
-        cadastro.incluir(new Apolice(null, null, null, null ,numero), numero);
+        cadastro.incluir(new Apolice(numero, null, null, null, null, null), numero);
         boolean ret = dao.excluir("31000000");
         Assertions.assertFalse(ret);
     }
     @Test
     public void teste05() {
         String numero = "40000000";
-        boolean ret = dao.incluir(new Apolice(null, null, null, null ,numero));
+        boolean ret = dao.incluir(new Apolice(numero, null, null, null, null, null));
         Assertions.assertTrue(ret);
         Apolice ve = dao.buscar(numero);
         Assertions.assertNotNull(ve);
@@ -50,7 +50,7 @@ public class TesteApoliceDAO extends TesteDAO {
     @Test
     public void teste06() {
         String numero = "50000000";
-        Apolice ve = new Apolice(null, null, null, null ,numero);
+        Apolice ve = new Apolice(numero, null, null, null, null, null);
         cadastro.incluir(ve, numero);
         boolean ret = dao.incluir(ve);
         Assertions.assertFalse(ret);
@@ -58,7 +58,7 @@ public class TesteApoliceDAO extends TesteDAO {
     @Test
     public void teste07() {
         String numero = "60000000";
-        boolean ret = dao.alterar(new Apolice(null, null, null, null ,numero));
+        boolean ret = dao.alterar(new Apolice(numero, null, null, null, null, null));
         Assertions.assertFalse(ret);
         Apolice ve = dao.buscar(numero);
         Assertions.assertNull(ve);
@@ -67,9 +67,9 @@ public class TesteApoliceDAO extends TesteDAO {
     @Test
     public void teste08() {
         String numero = "70000000";
-        Apolice ve = new Apolice(null, null, null, null ,numero);
+        Apolice ve = new Apolice(numero, null, null, null, null, null);
         cadastro.incluir(ve, numero);
-        ve = new Apolice(null, null, null, null ,numero);
+        ve = new Apolice(numero, null, null, null, null, null);
         boolean ret = dao.alterar(ve);
         Assertions.assertTrue(ret);
     }
