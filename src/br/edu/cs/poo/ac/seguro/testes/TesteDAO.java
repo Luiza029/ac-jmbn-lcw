@@ -20,10 +20,6 @@ public abstract class TesteDAO {
     @BeforeEach
     public void setUp() {
         String sep = File.separator;
-        File dir = new File("." + sep + getClasse().getSimpleName());
-        File[] files = dir.listFiles();
-        for (File file : files) {
-            file.delete();
-        }
+        FileUtils.limparDiretorio("." + sep + getClasse().getSimpleName());
     }
 }

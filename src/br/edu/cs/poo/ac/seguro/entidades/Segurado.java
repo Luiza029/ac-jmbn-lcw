@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.math.BigDecimal;
 import java.time.Period;
 
-public class Segurado {
+public abstract class Segurado implements Registro {
     private String nome;
     private Endereco endereco;
     private LocalDate dataCriacao;
@@ -58,5 +58,7 @@ public class Segurado {
     public void debitarBonus(BigDecimal valor){
         this.bonus = this.bonus.subtract(valor);
     }
+
+    public abstract boolean isEmpresa();
 
 }
